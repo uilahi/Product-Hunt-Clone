@@ -20,6 +20,7 @@
     </div>
 
 </div>
+
 <form id="upvote{{ product.id }}" method="POST" action="{% url 'upvote' product.id %}">
   {% csrf_token%}
   <input type="hidden">
