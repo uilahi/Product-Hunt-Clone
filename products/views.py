@@ -8,6 +8,7 @@ def home(request):
     products = Products.objects
     return render(request, 'products/home.html',{'products': products})
 
+
 @login_required(login_url="/accounts/login")
 def create(request):
     if request.method == 'POST':
@@ -36,14 +37,13 @@ def detail(request, product_id):
     products = get_object_or_404(Products, pk=product_id)
     return render(request, 'products/detail.html', {'products': products})
 
+
 @login_required(login_url="/accounts/login")
 def upvote(request, product_id):
     if request.method == 'POST':
         products = get_object_or_404(Products, pk=product_id)
         products.votes_total += 1
         products.save()
-        print(products.votes_total)
-
         return redirect('/products/'+str(products.id))
     else:
         return redirect('/products/'+str(product_id))
