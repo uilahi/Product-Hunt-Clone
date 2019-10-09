@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/root/python_workspace/')
 from django.contrib import admin
 from Python_Django.Product_Hunt_Clone.products import views
 from django.urls import path, include

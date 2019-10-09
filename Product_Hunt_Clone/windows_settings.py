@@ -13,7 +13,7 @@ SECRET_KEY = 'uq^64#j0qyc6-(v-#)tnk28r3cu3*ms=wr0ngxy7iojv$s$^#)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["18.219.168.255"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -67,9 +67,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'product_hunt_db',
-        'USER': 'admin',
+        'USER': 'postgres',
         'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
 
     }
@@ -121,7 +121,3 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-try:
-    from .local_settings import *
-except ImportError:
-    pass
